@@ -1,3 +1,5 @@
 class Question < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :answers
+  belongs_to :user
+  has_many :votes, as: :votable
 end
