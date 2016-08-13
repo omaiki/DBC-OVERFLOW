@@ -1,8 +1,17 @@
 <h1> Stack No Flow </h1>
 
+<h3>Question</h3>
 <p>
-  <%= @question.
-
-
-
+  <%= @question.body %>
 </p>
+
+<h3>Answers</h3>
+<div id='answer-list'>
+  <% @answers.each do |answer| %>
+    <p id="answer<%=answer.id%>"><%= answer.body %></p>
+  <% end %>
+</div>
+
+<div id='add-answer-button'>
+  <a href="/questions/<%= @question.id %>/answers/new" class="post">Post an answer</a>
+</div>

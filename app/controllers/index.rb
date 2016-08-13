@@ -9,7 +9,8 @@ get "/questions/new" do
 end
 
 get "/questions/:question_id/answers/new" do
-  erb :"answers/_new"
+  p params
+  erb :"answer/_new"
 end
 
 
@@ -20,6 +21,8 @@ end
 
 # Show
 get "/questions/:id" do
+  @question = Question.find(params[:id])
+  @answers = @question.answers
   erb :"questions/show"
 end
 

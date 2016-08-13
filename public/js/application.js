@@ -5,3 +5,18 @@ $(document).ready(function() {
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 });
+var showAnswerForm = function(){
+  $('#add-answer-button').on('click', function(event) {
+    event.preventDefault();
+
+    var url = $(this).children().attr('href')
+    var method = 'post'
+
+    var request = $.ajax ({
+      url: url
+      method: method
+    })
+  })
+
+}
+
